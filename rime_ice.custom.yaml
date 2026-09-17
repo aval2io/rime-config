@@ -1,0 +1,57 @@
+patch:
+  # 拼写运算规则追加 (+)
+  "speller/algebra/+":
+    # ==================== 前后鼻音 ====================
+    - derive/en$/eng/         # en => eng
+    - derive/eng$/en/         # eng => en
+    - derive/in$/ing/         # in => ing
+    - derive/ing$/in/         # ing => in
+    # 纠正 ian 打成 ain 的错误
+    - derive/ian$/ain/
+    # 建议顺便把其他常见的换位错误也加上
+    - derive/uai$/uia/
+    - derive/uan$/aun/
+    - derive/uang$/uagn/
+    
+    # # ==================== 平翘舌音 ====================
+    # - derive/^([zcs])h/$1/         # zh, ch, sh => z, c, s
+    # - derive/^([zcs])([^h])/$1h$2/ # z, c, s => zh, ch, sh
+    
+    # # ==================== 鼻音与边音 ====================
+    # - derive/^n/l/            # n => l
+    # - derive/^l/n/            # l => n
+    
+    # # ==================== 其他方言常见 ====================
+    # - derive/^r/l/            # r => l
+    # - derive/^l/r/            # l => r
+    # - derive/^f/h/            # f => h
+    # - derive/^h/f/            # h => f
+  # ======== 挂载 LaTeX 输入支持 ========
+  "punctuator/half_shape/\\": ["\\"]
+  "punctuator/full_shape/\\": ["\\"]
+  "punctuator/half_shape/|": ["、"]
+  "punctuator/full_shape/|": ["、"]
+  # 1. 允许反斜杠 \ 作为正常拼写字符进入 Rime，而不被当成标点直接上屏
+  # (雾凇默认的 alphabet 包含 /，我们需要追加 \)
+  "speller/alphabet": "zyxwvutsrqponmlkjihgfedcba/\\"
+  
+  # 2. 追加 LaTeX 翻译器 (@next 表示追加到已有翻译器列表的末尾，防止覆盖雾凇自带的翻译器)
+  "engine/translators/@next": table_translator@latex_input
+  
+  # 3. 定义触发条件：只有首字符输入 \ 且后面跟\着字母或 ^_ 时，才激活 LaTeX 引擎
+  "recognizer/patterns/latex_input": "^\\\\[a-zA-Z^_]+$"
+  
+  # 4. 追加 schema 依赖，指明需要用到 latex 这个字典文件
+  "schema/dependencies/@next": latex
+  
+  # 5. 定义 LaTeX 引擎的具体参数
+  latex_input:
+    tag: latex_input
+    dictionary: latex
+    prefix: "\\"
+    enable_sentence: false
+    enable_completion: true   # 开启自动补全候选
+    enable_user_dict: true    # 开启词频调整
+    user_dict: custom_latex_user
+    db_class: tabledb
+    tips: "[LaTeX]"           # 触发时候选框的提示文字

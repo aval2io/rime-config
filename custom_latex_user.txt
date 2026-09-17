@@ -1,0 +1,30 @@
+# Rime table
+#@/db_name	custom_latex_user
+#@/db_type	tabledb
+#@/rime_version	1.16.0
+#@/tick	54
+Φ	\Phi	1
+≈	\approx	1
+β	\beta	1
+ϵ	\epsilon	2
+≥	\ge	10
+∈	\in	2
+∞	\infty	1
+≤	\le	7
+↔	\leftrightarrow	1
+μ	\mu	2
+≠	\ne	1
+≢	\nequiv	4
+⊈	\nsubseteq	1
+⊙	\odot	2
+⦼	\odotslashdot	1
+π	\pi	2
+→	\rightarrow	2
+⥰	\rightimply	1
+σ	\sigma	1
+√	\sqrt	2
+⊆	\subseteq	2
+⪰	\succeq	1
+θ	\theta	2
+→	\to	4
+ξ	\xi	1
