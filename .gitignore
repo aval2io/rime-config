@@ -25,6 +25,7 @@
 # macOS / 编辑器垃圾文件
 .DS_Store
 Thumbs.db
+.vscode/
 
 # ---------- 2. 通用 rime-ice 内容（可重新下载，不入库） ----------
 
@@ -72,7 +73,6 @@ Thumbs.db
 #
 #   .gitignore              本文件
 #   README.md               目录说明
-#   .vscode/settings.json   编辑器设置
 #   rime_ice.schema.yaml    主方案（有本地改动）
 #   rime_ice.custom.yaml    你的补丁：模糊音 + LaTeX 输入
 #   default.yaml            全局配置（候选数、方案列表等有改动）
