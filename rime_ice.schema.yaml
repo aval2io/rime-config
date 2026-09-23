@@ -73,6 +73,7 @@ engine:
     - lua_translator@*force_gc           # 暴力 GC
   filters:
     - lua_filter@*corrector                         # 错音错字提示
+    - lua_filter@*roman_numeral_filter              # 数字拼音第二个候选给出罗马数字（er → Ⅱ）
     - reverse_lookup_filter@radical_reverse_lookup  # 部件拆字滤镜
     - lua_filter@*autocap_filter                    # 英文自动大写
     - lua_filter@*v_filter                          # v 模式 symbols 优先

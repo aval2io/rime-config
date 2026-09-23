@@ -36,7 +36,10 @@ Thumbs.db
 /en_dicts/
 
 # 官方 Lua 脚本（翻译器 / 过滤器 / 处理器）
-/lua/
+# 注意：用 /lua/* 而非 /lua/，否则 git 不会进入目录，无法用反选恢复个人脚本
+/lua/*
+# 个人定制脚本（主方案 filters 中引用，迁移必带）
+!/lua/roman_numeral_filter.lua
 
 # Emoji 与简繁转换的 OpenCC 数据
 /opencc/
@@ -81,6 +84,7 @@ Thumbs.db
 #   custom_latex_user.txt   LaTeX 用户词库（学习所得）
 #   latex.schema.yaml       rime-latex 插件，非 rime-ice 自带
 #   latex.dict.yaml         rime-latex 码表
+#   lua/roman_numeral_filter.lua  数字拼音罗马数字候选（er → Ⅱ），主方案引用
 #
 # 说明：
 # - rime_ice.schema.yaml / default.yaml / squirrel.yaml 是从上游复制后

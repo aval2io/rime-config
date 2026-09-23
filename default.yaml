@@ -117,7 +117,7 @@ punctuator:
   # 数字后也走 half_shape 映射，输出全角中文标点（，。：等）
   # 置空即关闭「数字分隔符」特性；若要保留半角数字写法（1,000 / 3.14 / 1:30），
   # 把需要的字符填回，例如 ",.:"
-  digit_separators: ""
+  digit_separators: "."
   # digit_separator_action: commit  # 关闭上述行为 librime >= 1.13.1
   full_shape:
     ' ': { commit: '　' }
